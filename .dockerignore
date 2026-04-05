@@ -1,0 +1,10 @@
+node_modules
+dist
+.env
+*.spec.ts
+.angular
+.git
+.gitignore
+README.md
+.DS_Store
+*.log

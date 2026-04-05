@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Typography */
+    --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-heading: 'General Sans', 'Inter', ui-sans-serif, system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+
+    /* Brand Colors */
+    --color-primary: #008f3c;
+    --color-primary-hover: #007a33;
+    --color-primary-light: #e6f4ec;
+    --color-primary-muted: #cce9d9;
+    --color-dark: #0e6049;
+    --color-muted: #52665a;
+    --color-accent: #79b32b;
+    --color-alert: #fcc800;
+    --color-alert-light: #fff8e0;
+    --color-alert-muted: #fff1c2;
+    --color-alert-dark: #92400e;
+
+    /* Semantic: Error */
+    --color-error: #dc2626;
+    --color-error-hover: #b91c1c;
+    --color-error-light: #fef2f2;
+    --color-error-muted: #fee2e2;
+    --color-error-dark: #991b1b;
+
+    /* Surfaces & Borders */
+    --color-bg: #f8faf9;
+    --color-surface: #ffffff;
+    --color-border: #e2e8e5;
+    --color-sidebar-inactive: #a3c6bc;
+
+    /* Shadow */
+    --shadow-subtle: 0px 1px 3px rgba(14, 96, 73, 0.08);
+  }
+
+  /* Antialiasing */
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-sans);
+  }
+
+  /* General Sans @font-face */
+  @font-face {
+    font-family: 'General Sans';
+    src: url('/assets/fonts/general-sans-400.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'General Sans';
+    src: url('/assets/fonts/general-sans-500.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'General Sans';
+    src: url('/assets/fonts/general-sans-600.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  @font-face {
+    font-family: 'General Sans';
+    src: url('/assets/fonts/general-sans-700.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  /* Selection */
+  ::selection {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  /* Focus-visible ring */
+  :focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-border);
+    border-radius: 20px;
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-border) transparent;
+  }
+
+  /* Transitions */
+  button,
+  [role='button'],
+  input[type='submit'] {
+    transition-property: color, background-color, border-color, box-shadow, opacity;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  a {
+    transition-property: color, opacity;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  input,
+  select,
+  textarea {
+    transition-property: border-color, box-shadow;
+    transition-duration: 150ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
